@@ -1,0 +1,4 @@
+#ifndef IS_PALINDROME_HPP
+#define IS_PALINDROME_HPP
+
+#endif // IS_PALINDROME_HPP
