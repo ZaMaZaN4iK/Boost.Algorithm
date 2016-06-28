@@ -40,6 +40,7 @@ namespace boost { namespace algorithm {
 /// \param last  One past the end of the sequence
 /// \param p     A binary predicate that returns true if two elements are ordered.
 ///
+///
     template <typename ForwardIterator, typename Pred>
     ForwardIterator is_ordered ( ForwardIterator first, ForwardIterator last, Pred p )
     {

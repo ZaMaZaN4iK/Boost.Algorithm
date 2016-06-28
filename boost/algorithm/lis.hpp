@@ -1,4 +1,7 @@
-#ifndef LIS_HPP
-#define LIS_HPP
+#ifndef BOOST_ALGORITHM_LIS_HPP
+#define BOOST_ALGORITHM_LIS_HPP
 
-#endif // LIS_HPP
+
+
+
+#endif // BOOST_ALGORITHM_LIS_HPP
