@@ -1,5 +1,5 @@
-#ifndef BOOST_ALGORITHM_IS_PALINDROME_HPP
-#define BOOST_ALGORITHM_IS_PALINDROME_HPP
+#ifndef BOOST_ALGORITHM_is_palindromic_HPP
+#define BOOST_ALGORITHM_is_palindromic_HPP
 
 #include <iterator>
 
@@ -9,12 +9,12 @@
 namespace boost {  namespace algorithm {
 
 template <typename BidirectionalIterator, typename Comp>
-bool is_palindrome(BidirectionalIterator begin, BidirectionalIterator end, Comp c)
+bool is_palindromic(BidirectionalIterator begin, BidirectionalIterator end, Comp comp)
 {
     --end;
     while(std::distance(begin, end) > 0)
     {
-        if(!c(*begin, *end))
+        if(!comp(*begin, *end))
         {
             return false;
         }
@@ -25,26 +25,26 @@ bool is_palindrome(BidirectionalIterator begin, BidirectionalIterator end, Comp 
 }
 
 template <typename BidirectionalIterator>
-bool is_palindrome(BidirectionalIterator begin, BidirectionalIterator end)
+bool is_palindromic(BidirectionalIterator begin, BidirectionalIterator end)
 {
-    return is_palindrome(begin, end,
+    return is_palindromic(begin, end,
                          std::equal_to<typename std::iterator_traits<BidirectionalIterator>::value_type> ());
 }
 
 
 template <typename R>
-bool is_palindrome(const R& range)
+bool is_palindromic(const R& range)
 {
-    return is_palindrome(boost::begin(range), boost::end(range));
+    return is_palindromic(boost::begin(range), boost::end(range));
 }
 
 
 template <typename R, typename Comp>
-bool is_palindrome(const R& range, Comp c)
+bool is_palindromic(const R& range, Comp c)
 {
-    return is_palindrome(boost::begin(range), boost::end(range), c);
+    return is_palindromic(boost::begin(range), boost::end(range), c);
 }
 
 }}
 
-#endif // BOOST_ALGORITHM_IS_PALINDROME_HPP
+#endif // BOOST_ALGORITHM_is_palindromic_HPP
